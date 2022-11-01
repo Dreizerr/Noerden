@@ -2,6 +2,11 @@
 
 $green: #0ead69;
 
+html {
+  background-color: gray;
+  font-size: calc(10 * (100vw / 1920));
+}
+
 body {
   font-family: Nunito Sans;
 }
@@ -38,11 +43,11 @@ body {
 
 .menu__item {
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 2.2em;
 }
 
 .logo {
   font-family: Kodchasan;
   color: $green;
-  font-size: 60px;
+  font-size: 6em;
 }
