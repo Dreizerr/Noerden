@@ -92,7 +92,7 @@ h6 {
 
 html {
   background-color: gray;
-  font-size: 0.5208333333vw;
+  font-size: calc(7px + 0.15625vw);
 }
 
 body {
@@ -129,11 +129,11 @@ body {
 
 .menu__item {
   text-transform: uppercase;
-  font-size: 2.2em;
+  font-size: 2.2rem;
 }
 
 .logo {
   font-family: Kodchasan;
   color: #0ead69;
-  font-size: 6em;
+  font-size: 6rem;
 }/*# sourceMappingURL=styles.css.map */
