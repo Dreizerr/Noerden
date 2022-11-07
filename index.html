@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Kodchasan:200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <title>Noerden</title>
   </head>
   <body>
     <header class="header">
-      <div class="header__container">
+      <div class="header__wrapper">
         <a href="" class="logo">NOERDEN</a>
         <nav class="header__menu menu">
           <ul class="menu__list">
@@ -39,13 +42,12 @@
                 >+7 902 253 12 54</a
               >
             </li>
+            <li>
+              <a class="header__profile" href="">
+                <img src="Images/Profile.svg" alt="profile" />
+              </a>
+            </li>
           </ul>
-          <a href="">
-            <img
-              class="header__profile"
-              src="Images/Profile.svg"
-              alt="profile" />
-          </a>
         </nav>
       </div>
     </header>
@@ -54,12 +56,76 @@
         <div class="watch__block-order">
           <h1>ЧАСЫ - КОМПАС ВРЕМЕНИ</h1>
           <p class="watch__text">Для тех, кому не безразлично время</p>
+          <div class="watch__timer-box">
+            <span class="watch__days-box">
+              <span class="watch__days-num">09</span>
+              <span class="watch__days-title">Дней</span>
+            </span>
+            <span class="watch__hours-box">
+              <span class="watch__hours-num">21</span>
+              <span class="watch__hours-title">Часов</span>
+            </span>
+            <span class="watch__minutes-box">
+              <span class="watch__minutes-num">54</span>
+              <span class="watch__minutes-title">Минут</span>
+            </span>
+            <span class="watch__seconds-box">
+              <span class="watch__seconds-num">38</span>
+              <span class="watch__seconds-title">Секунд</span>
+            </span>
+          </div>
           <p class="watch__text-discount">
             Cкидка 15% до окончания таймера. Успейте купить!
           </p>
           <a href="" class="watch__button button">Заказать</a>
         </div>
+        <div class="watch__block-img">
+          <!-- <div class="arrow-1"></div> -->
+          <img class="watch__img" src="images/Watches.png" alt="watches" />
+          <!-- <div class="arrow-2"></div> -->
+        </div>
       </div>
+    </section>
+    <section id="features" class="greenbar">
+      <h2 class="section__title">Характеристики</h2>
+      <div class="features__container">
+        <div class="features__cards">
+          <div class="features__card">
+            <div class="features__card-ellipse">
+              <img src="Images/backclock 1.png" class="features__card-img" />
+            </div>
+            <h3 class="features__card-title">Стекло</h3>
+            <p class="features__card-text">
+              Прочное <br />
+              минеральное стекло
+            </p>
+          </div>
+          <div class="features__card">
+            <div class="features__card-ellipse">
+              <img src="Images/backclock 1.png" class="features__card-img" />
+            </div>
+            <h3 class="features__card-title">Материал</h3>
+            <p class="features__card-text">
+              Нержавеющая <br />
+              сталь
+            </p>
+          </div>
+          <div class="features__card">
+            <div class="features__card-ellipse">
+              <img src="Images/backclock 1.png" class="features__card-img" />
+            </div>
+            <h3 class="features__card-title">Ремешок</h3>
+            <p class="features__card-text">
+              Удобный <br />
+              кожаный ремешок
+            </p>
+          </div>
+        </div>
+        <a href="" class="features__btn button">Заказать</a>
+      </div>
+    </section>
+    <section id="statistics" class="greenbar">
+      
     </section>
   </body>
 </html>

@@ -1,6 +1,7 @@
 @import "_nullstyle";
 
 $green: #0ead69;
+$grey: #d0d0d0;
 
 $maxWidth: 1920;
 
@@ -27,8 +28,14 @@ h1 {
   @include adaptiv-font(54, 3);
 }
 
+h2 {
+  font-size: 38px;
+  color: $green;
+  font-weight: 700;
+}
+
 html {
-  background-color: gray;
+  background-color: #212121;
   // font-size: calc(10 * (100vw / 1920));
 }
 
@@ -52,9 +59,18 @@ a {
   border: 3px solid #0ead69;
 }
 
+.section__title {
+  margin: 27px 0px 0px 138px;
+}
+
+.greenbar {
+  border-top: solid 6px $green;
+}
+
 // header
 
-.header__container {
+.header__wrapper {
+  max-width: 1920px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,12 +95,21 @@ a {
   display: flex;
   gap: 26px;
   padding-left: 10px;
+  align-items: center;
 }
 
 .menu__list {
   display: flex;
   gap: 26px;
   align-items: center;
+}
+
+.header__profile {
+  max-width: 99%;
+}
+
+.header__profile img {
+  object-fit: cover;
 }
 
 .menu__item {
@@ -97,17 +122,104 @@ a {
 
 .watch {
   background: url(images/Introimg.jpg) center, no-repeat;
-  height: 100vh;
+  background-size: cover;
+  // height: 100vh;
+}
+
+.watch__block-order {
+  padding: 15px;
 }
 
 .watch__container {
-  padding: 166px 0px 125px 126px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 166px 15px 118px 126px;
 }
 
 .watch__text {
   font-family: "Exo 2";
   margin: 25px 0px 13px 0px;
   @include adaptiv-font(28, 3);
+}
+
+.watch__timer-box {
+  max-width: 365px;
+  position: relative;
+  display: flex;
+  padding: 15px 23px;
+}
+
+.watch__timer-box::before,
+.watch__timer-box::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 3px;
+  background-color: $green;
+}
+
+.watch__timer-box::before {
+  left: 0;
+  top: 0;
+}
+
+.watch__timer-box::after {
+  right: 0;
+  top: 0;
+}
+
+span[class^="watch__"][class$="box"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.watch__hours-box {
+  margin-right: 20px;
+}
+
+.watch__hours-box::after {
+  content: ":";
+  font-size: 50px;
+  color: $green;
+  position: absolute;
+  top: -5px;
+  right: -14px;
+}
+
+.watch__minutes-box {
+  margin-right: 20px;
+}
+
+.watch__minutes-box::after {
+  content: ":";
+  font-size: 50px;
+  color: $green;
+  position: absolute;
+  top: -5px;
+  right: -14px;
+}
+
+.watch__days-box {
+  margin-right: 35px;
+}
+
+[class^="watch__"][class$="num"] {
+  color: $green;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+[class^="watch__"][class$="title"] {
+  font-size: 16px;
+}
+
+.watch__text-discount {
+  color: $green;
+  @include adaptiv-font(22, 3);
+  margin: 20px 0px 40px 0px;
 }
 
 .watch__text-discount {
@@ -117,7 +229,102 @@ a {
 }
 
 .watch__button {
-  padding: 15px 50px;
+  padding: 15px 60px;
   // font-size: 32px;
   @include adaptiv-font(32, 3);
 }
+
+.watch__block-img {
+  display: flex;
+  align-items: center;
+}
+
+.watch__img {
+  max-width: 100%;
+  flex: 0 1 50%;
+}
+
+.arrow-1 {
+  transform: rotate(135deg);
+}
+
+.arrow-2 {
+  transform: rotate(-45deg);
+}
+
+.arrow-1,
+.arrow-2 {
+  cursor: pointer;
+  border: solid #fbfffe;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 15px;
+}
+
+// Features
+
+.features__container {
+  text-align: center;
+  padding: 255px 10px 91px 10px;
+}
+
+.features__cards {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+
+.features__card {
+  padding: 15px;
+  margin-bottom: 50px;
+  max-width: 403px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.features__card-ellipse {
+  position: relative;
+  border: solid 6px $green;
+  background-color: $grey;
+  border-radius: 50%;
+  width: 342px;
+  height: 342px;
+}
+
+.features__card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.features__card-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 23px 0px 12px 0px;
+  color: $green;
+}
+
+.features__card-text {
+  padding: 10px;
+  font-size: 24px;
+  font-family: "Exo 2";
+  line-height: 1.4;
+}
+
+.features__btn {
+  font-size: 28px;
+  padding: 15px 75px;
+}
+
+// Media
+
+// @media (max-width: 1730px) {
+//   [class*="__container"] {
+//     max-width: 1350px;
+//   }
+
+//   .watch__container {
+//     padding-left: 0px;
+//   }
+// }
