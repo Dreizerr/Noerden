@@ -71,6 +71,7 @@ a {
 
 .header__wrapper {
   max-width: 1920px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -313,6 +314,69 @@ span[class^="watch__"][class$="box"] {
 }
 
 .features__btn {
+  font-size: 28px;
+  padding: 15px 75px;
+}
+
+// statistics
+
+.statistics__container {
+  padding: 15px 0px 78px 0px;
+  text-align: center;
+}
+
+.statistics__content {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.statistics__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 65px 0px;
+}
+
+.statistics__title {
+  font-weight: 700;
+  font-size: 32px;
+  // ::after {
+  //   content: "";
+  //   display: block;
+  //   width: 200px;
+  //   height: 4px;
+  //   color: $green;
+  // }
+  // ОШИБКА: КОМПИЛИРУЕТ КЛАСС В CSS С ПРОБЕЛОМ ПЕРЕД ПСЕДВОЭЛЕМЕНТОМ
+}
+
+.statistics__greenbar::after {
+  content: "";
+  margin: 10px auto 15px auto;
+  display: block;
+  width: 200px;
+  height: 4px;
+  background-color: $green;
+}
+
+.statistics__number {
+  font-weight: 700;
+  font-size: 90px;
+}
+
+.statistics__text {
+  margin-top: 25px;
+  line-height: 1.3;
+  font-family: "Exo 2";
+  font-size: 24px;
+}
+
+.block-ratings {
+  flex-direction: column-reverse;
+}
+
+.statistics__btn {
   font-size: 28px;
   padding: 15px 75px;
 }
