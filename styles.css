@@ -238,8 +238,8 @@ a {
 .watch__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 166px 15px 118px 126px;
+  justify-content: space-around;
+  padding: 166px 15px 118px 15px;
 }
 
 .watch__text {
@@ -645,4 +645,58 @@ span[class^=watch__][class$=box] {
   padding: 25px 15px;
   width: 350px;
   margin: 0 auto;
+}
+
+.order__container {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 0px 55px 0px;
+  max-width: 817px;
+}
+
+.order__form {
+  margin-bottom: 55px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 380px));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+  row-gap: 30px;
+  -moz-column-gap: 70px;
+       column-gap: 70px;
+  grid-auto-flow: column;
+}
+.order__form > * {
+  border: 3px solid #0ead69;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Exo 2";
+  color: black;
+}
+.order__form > *::-moz-placeholder {
+  font-size: 20px;
+  font-family: "Exo 2";
+  color: black;
+}
+.order__form > *:-ms-input-placeholder {
+  font-size: 20px;
+  font-family: "Exo 2";
+  color: black;
+}
+.order__form > *::placeholder {
+  font-size: 20px;
+  font-family: "Exo 2";
+  color: black;
+}
+
+.order__comment {
+  grid-row: span 3;
+  grid-column-start: -1;
+}
+
+.order__button {
+  border-radius: 15px;
+  font-size: 26px;
+  text-align: center;
+  max-width: 380px;
+  padding: 15px 0px;
 }/*# sourceMappingURL=styles.css.map */
