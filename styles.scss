@@ -251,18 +251,28 @@ span[class^="watch__"][class$="box"] {
   @include adaptiv-font(32, 3);
 }
 
-.watch__block-img {
+.watch__slider {
   display: flex;
   gap: 60px;
   align-items: center;
 }
 
+.watch__block-img {
+  display: flex;
+  align-items: center;
+  max-width: 489px;
+  min-height: 647px;
+}
+
 .watch__img {
-  max-width: 100%;
   flex: 0 1 50%;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.8s;
+  width: 0px;
   &:hover {
     filter: drop-shadow(1px 1px 40px rgba(85, 255, 225, 0.4));
+  }
+  &.active {
+    width: 100%;
   }
 }
 
@@ -276,6 +286,7 @@ span[class^="watch__"][class$="box"] {
 
 .arrow-1,
 .arrow-2 {
+  background: none;
   cursor: pointer;
   border: solid #fbfffe;
   border-width: 0 5px 5px 0;
@@ -363,7 +374,7 @@ span[class^="watch__"][class$="box"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 65px 0px;
+  padding-top: 65px;
 }
 
 .statistics__title {
