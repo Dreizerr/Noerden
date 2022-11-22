@@ -22,6 +22,10 @@ a:active {
   outline: none;
 }
 
+button {
+  background: none;
+}
+
 nav,
 footer,
 header,
@@ -121,6 +125,7 @@ h4 {
 
 html {
   background-color: #212121;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -239,6 +244,13 @@ a {
   .menu__item {
     font-size: 22px;
   }
+}
+
+.menu__link {
+  transition: all ease 0.3s;
+}
+.menu__link:hover {
+  color: #0ead69;
 }
 
 .watch {
@@ -651,8 +663,15 @@ span[class^=watch__][class$=box] {
   align-items: flex-end;
 }
 
-.review__like-img:hover {
-  background-color: #0ead69;
+.review__like-img {
+  cursor: pointer;
+  transition: filter ease-in-out 0.1s;
+}
+.review__like-img.active {
+  filter: hue-rotate(235deg);
+}
+.review__like-img:not(.active):hover {
+  filter: saturate(300%);
 }
 
 .review__like-num {
@@ -664,6 +683,9 @@ span[class^=watch__][class$=box] {
   border: 3px solid #0ead69;
   border-radius: 0 25px 5px 25px;
   padding: 25px 14px 7px 14px;
+}
+.review__content:not(.active) :not(:first-child):not(:last-child) {
+  display: none;
 }
 
 .review__text {
@@ -678,6 +700,7 @@ span[class^=watch__][class$=box] {
   color: #0ead69;
   display: block;
   text-align: right;
+  margin-left: auto;
 }
 
 .reviews__all-reviews {

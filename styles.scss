@@ -42,6 +42,7 @@ h4 {
 
 html {
   background-color: #212121;
+  scroll-behavior: smooth;
   // font-size: calc(10 * (100vw / 1920));
 }
 
@@ -132,6 +133,13 @@ a {
   text-transform: uppercase;
   // font-size: 2.2rem;
   @include adaptiv-font(22, 3);
+}
+
+.menu__link {
+  transition: all ease 0.3s;
+  &:hover {
+    color: $green;
+  }
 }
 
 // watch
@@ -499,8 +507,13 @@ span[class^="watch__"][class$="box"] {
 }
 
 .review__like-img {
-  &:hover {
-    background-color: $green;
+  cursor: pointer;
+  transition: filter ease-in-out 0.1s;
+  &.active {
+    filter: hue-rotate(235deg);
+  }
+  &:not(.active):hover {
+    filter: saturate(300%);
   }
 }
 
@@ -513,6 +526,9 @@ span[class^="watch__"][class$="box"] {
   border: 3px solid $green;
   border-radius: 0 25px 5px 25px;
   padding: 25px 14px 7px 14px;
+  &:not(.active) :not(:first-child):not(:last-child) {
+    display: none;
+  }
 }
 
 .review__text {
@@ -527,6 +543,7 @@ span[class^="watch__"][class$="box"] {
   color: $green;
   display: block;
   text-align: right;
+  margin-left: auto;
 }
 
 .reviews__all-reviews {
