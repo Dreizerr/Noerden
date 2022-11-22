@@ -445,7 +445,7 @@ span[class^=watch__][class$=box] {
 
 .watch__img {
   flex: 0 1 50%;
-  transition: all ease-in-out 0.8s;
+  transition: all ease-in-out 0.5s;
   width: 0px;
 }
 .watch__img:hover {
@@ -771,6 +771,10 @@ span[class^=watch__][class$=box] {
   display: flex;
   gap: 35px;
   align-items: center;
+}
+
+.footer__link:hover {
+  color: #0ead69;
 }
 
 .footer__social-media {
