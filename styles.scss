@@ -610,6 +610,7 @@ span[class^="watch__"][class$="box"] {
 }
 
 .footer__link {
+  transition: all ease 0.3s;
   &:hover {
     color: $green;
   }
@@ -637,6 +638,13 @@ span[class^="watch__"][class$="box"] {
   &::after {
     top: calc(50% - 3px);
     left: 0;
+  }
+}
+
+.social-media__item {
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    transform: translate3d(0, -15px, 0);
   }
 }
 

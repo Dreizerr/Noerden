@@ -3,17 +3,35 @@ let arrowLeft = document.querySelector(".arrow-1");
 let arrowRight = document.querySelector(".arrow-2");
 let likes = document.querySelectorAll(".review__like-img");
 let commentOpeners = document.querySelectorAll(".review__read-next");
+let deadline = new Date("Jan 1 2023 00:00:00");
+
+function timer() {
+  let today = new Date();
+  let timeLeft = deadline - today;
+  let days = Math.floor(timeLeft / 1000 / 60 / 60 / 24);
+  let hours = Math.floor(timeLeft / 1000 / 60 / 60) % 24;
+  let minutes = Math.floor(timeLeft / 1000 / 60) % 60;
+  let seconds = Math.floor(timeLeft / 1000) % 60;
+
+  document.querySelector(".watch__days-num").innerHTML = days;
+  document.querySelector(".watch__hours-num").innerHTML = hours;
+  document.querySelector(".watch__minutes-num").innerHTML = minutes;
+  document.querySelector(".watch__seconds-num").innerHTML = seconds;
+}
+
+timer();
+
+setInterval(timer, 1000);
 
 for (let commentOpener of commentOpeners) {
   commentOpener.onclick = function () {
     if (commentOpener.parentNode.classList.contains("active")) {
       commentOpener.innerHTML = "Читать далее...";
-    }
-    else {
+    } else {
       commentOpener.innerHTML = "Скрыть";
     }
     commentOpener.parentNode.classList.toggle("active");
-  }
+  };
 }
 
 for (let like of likes) {

@@ -773,6 +773,9 @@ span[class^=watch__][class$=box] {
   align-items: center;
 }
 
+.footer__link {
+  transition: all ease 0.3s;
+}
 .footer__link:hover {
   color: #0ead69;
 }
@@ -796,6 +799,13 @@ span[class^=watch__][class$=box] {
 .footer__social-media::after {
   top: calc(50% - 3px);
   left: 0;
+}
+
+.social-media__item {
+  transition: all ease-in-out 0.3s;
+}
+.social-media__item:hover {
+  transform: translate3d(0, -15px, 0);
 }
 
 .footer__container {
