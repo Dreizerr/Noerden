@@ -4,6 +4,9 @@ let arrowRight = document.querySelector(".arrow-2");
 let likes = document.querySelectorAll(".review__like-img");
 let commentOpeners = document.querySelectorAll(".review__read-next");
 let deadline = new Date("Jan 1 2023 00:00:00");
+let endOfPage = document.querySelector(".footer");
+let startOfPage = document.querySelector(".header");
+let screenArrow = document.querySelector(".screenarrow");
 
 function timer() {
   let today = new Date();
@@ -74,5 +77,79 @@ arrowRight.onclick = function () {
   }
 };
 
-let date = new Date();
-console.log(date);
+let scrolled;
+let timeOut;
+
+window.addEventListener("scroll", function () {
+  scrolled = window.pageYOffset;
+  if (scrolled >= 400) {
+    screenArrow.classList.add("bottom");
+  } else {
+    screenArrow.classList.remove("bottom");
+  }
+
+  if (screenArrow.classList.contains("bottom")) {
+    screenArrow.onclick = function scrollTop() {
+      if (scrolled >= 400) {
+        scrolled = scrolled - 500;
+        window.scrollTo(0, scrolled);
+        timeOut = setTimeout(scrollTop, 100);
+      } else {
+        clearTimeout(timeOut);
+        window.scrollTo(0, 0);
+      }
+    };
+  } else {
+    screenArrow.onclick = function scrollBottom() {
+      if (scrolled < 3500) {
+        scrolled = scrolled + 500;
+        window.scrollTo(0, scrolled);
+        timeOut = setTimeout(scrollBottom, 100);
+      } else {
+        clearTimeout(timeOut);
+        window.scrollTo(0, 4000);
+      }
+    };
+  }
+});
+
+// screenArrow.onclick = function scrollTop() {
+//   if (scrolled >= 400) {
+//     scrolled = scrolled - 500;
+//     window.scrollTo(0, scrolled);
+//     timeOut = setTimeout(scrollTop, 100);
+//   } else {
+//     clearTimeout(timeOut);
+//     window.scrollTo(0, 0);
+//   }
+// };
+
+// function scrollTop() {
+//   scrolled = window.pageYOffset;
+//   if (scrolled > 0) {
+//     window.scrollTo(0, scrolled);
+//     scrolled = scrolled - 100;
+//     setTimeout(scrollTop, 200);
+//   }
+// }
+
+// screenArrow.onclick = function () {
+//   if (screenArrow.classList.contains("bottom")) {
+//     startOfPage.scrollIntoView(top);
+//   } else {
+//     // for (let index = window.pageYOffset; index <= 4000; ) {
+//     //   setTimeout(index++, 100);
+//     //   window.scrollTo(0, index);
+//     // }
+//     endOfPage.scrollIntoView(top);
+//   }
+// };
+
+// window.addEventListener("scroll", function () {
+//   let cord = window.pageYOffset;
+//   if (scrolled>= 400) {
+//     screenArrow.classList.add("bottom");
+//   } else {
+//     screenArrow.classList.remove("bottom");
+//   }
+// });

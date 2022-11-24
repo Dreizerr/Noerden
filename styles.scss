@@ -41,9 +41,8 @@ h4 {
 }
 
 html {
-  background-color: #212121;
   scroll-behavior: smooth;
-  // font-size: calc(10 * (100vw / 1920));
+  background-color: #212121;
 }
 
 body {
@@ -62,7 +61,19 @@ a {
 }
 
 .wrapper {
-  background: url(images/Background_2.jpg) right 49% top 116% no-repeat;
+  position: relative;
+  background: url(images/Background_2.jpg) right 0 top 116% no-repeat;
+}
+
+.screenarrow {
+  z-index: 1000;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  transition: all ease-in-out 0.5s;
+  &.bottom {
+    transform: rotate(180deg);
+  }
 }
 
 .button {
