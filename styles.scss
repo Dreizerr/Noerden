@@ -61,7 +61,6 @@ a {
 }
 
 .wrapper {
-  position: relative;
   background: url(images/Background_2.jpg) right 0 top 116% no-repeat;
 }
 
@@ -73,6 +72,9 @@ a {
   transition: all ease-in-out 0.5s;
   &.bottom {
     transform: rotate(180deg);
+  }
+  img {
+    width: 65px;
   }
 }
 
@@ -584,19 +586,33 @@ span[class^="watch__"][class$="box"] {
   row-gap: 30px;
   column-gap: 70px;
   grid-auto-flow: column;
-  > * {
-    border: 3px solid $green;
-    border-radius: 15px;
-    padding: 10px 15px;
+}
+
+.forms__item {
+  position: relative;
+}
+
+.input-style {
+  width: 100%;
+  border: 3px solid $green;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-family: "Exo 2";
+  color: black;
+  &::placeholder {
     font-size: 20px;
     font-family: "Exo 2";
     color: black;
-    &::placeholder {
-      font-size: 20px;
-      font-family: "Exo 2";
-      color: black;
-    }
   }
+}
+
+.inp1 {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
 }
 
 .order__comment {

@@ -144,7 +144,6 @@ a {
 }
 
 .wrapper {
-  position: relative;
   background: url(images/Background_2.jpg) right 0 top 116% no-repeat;
 }
 
@@ -157,6 +156,9 @@ a {
 }
 .screenarrow.bottom {
   transform: rotate(180deg);
+}
+.screenarrow img {
+  width: 65px;
 }
 
 .button {
@@ -742,7 +744,13 @@ span[class^=watch__][class$=box] {
        column-gap: 70px;
   grid-auto-flow: column;
 }
-.order__form > * {
+
+.forms__item {
+  position: relative;
+}
+
+.input-style {
+  width: 100%;
   border: 3px solid #0ead69;
   border-radius: 15px;
   padding: 10px 15px;
@@ -750,20 +758,28 @@ span[class^=watch__][class$=box] {
   font-family: "Exo 2";
   color: black;
 }
-.order__form > *::-moz-placeholder {
+.input-style::-moz-placeholder {
   font-size: 20px;
   font-family: "Exo 2";
   color: black;
 }
-.order__form > *:-ms-input-placeholder {
+.input-style:-ms-input-placeholder {
   font-size: 20px;
   font-family: "Exo 2";
   color: black;
 }
-.order__form > *::placeholder {
+.input-style::placeholder {
   font-size: 20px;
   font-family: "Exo 2";
   color: black;
+}
+
+.inp1 {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
 }
 
 .order__comment {

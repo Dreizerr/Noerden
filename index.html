@@ -16,11 +16,11 @@
       rel="stylesheet" />
     <title>Noerden</title>
   </head>
-  <body>
+  <body class="body">
+    <button class="screenarrow">
+      <img src="images/ScreenArrow.svg" alt="" />
+    </button>
     <div class="wrapper">
-      <button class="screenarrow">  
-        <img src="images/ScreenArrow.svg" alt="" />
-      </button>
       <header class="header">
         <div class="header__wrapper">
           <a href="" class="logo">NOERDEN</a>
@@ -339,26 +339,42 @@
         <section id="order" class="greenbar order">
           <h2 class="section__title">Заказать</h2>
           <div class="order__container">
-            <div class="order__form">
-              <input type="text" class="order__name" placeholder="Ваше имя" />
-              <input
-                type="tel"
-                class="order__phone"
-                placeholder="Ваш телефон" />
-              <input
-                type="email"
-                class="order__email"
-                placeholder="Ваш Email" />
+            <div class="order__form forms">
+              <div class="forms__item">
+                <input
+                  name="inp1"
+                  type="text"
+                  class="order__name input-style"
+                  placeholder="Ваше имя" />
+                <label class="inp1" for="inp1"
+                  >Неправильная запись данных</label
+                >
+              </div>
+              <div class="forms__item">
+                <input
+                  type="tel"
+                  class="order__phone input-style"
+                  placeholder="Ваш телефон" />
+              </div>
+              <div class="forms__item">
+                <input
+                  type="email"
+                  class="order__email input-style"
+                  placeholder="Ваш Email" />
+              </div>
+              <!-- <div class="forms__item"> -->
               <textarea
                 name="comment"
                 minlength="10"
                 maxlength="200"
                 id=""
                 cols="0"
-                style="resize: none"
+                style="resize: none; position: relative"
                 rows="0"
-                class="order__comment"
+                class="order__comment input-style"
                 placeholder="Комментарий к заказу"></textarea>
+              <!-- <label class="inp1" for="comment">Неправильная запись данных</label> -->
+              <!-- </div> -->
             </div>
             <a href="#" class="order__button button">Заказать</a>
           </div>

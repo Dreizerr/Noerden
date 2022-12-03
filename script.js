@@ -7,6 +7,9 @@ let deadline = new Date("Jan 1 2023 00:00:00");
 let endOfPage = document.querySelector(".footer");
 let startOfPage = document.querySelector(".header");
 let screenArrow = document.querySelector(".screenarrow");
+let body = document.querySelector(".body");
+
+let wrapper = document.querySelector(".wrapper");
 
 function timer() {
   let today = new Date();
@@ -80,8 +83,9 @@ arrowRight.onclick = function () {
 let scrolled;
 let timeOut;
 
-window.addEventListener("scroll", function () {
-  scrolled = window.pageYOffset;
+window.addEventListener("scroll", function scrolledDistance() {
+  scrolled = window.scrollY;
+
   if (scrolled >= 400) {
     screenArrow.classList.add("bottom");
   } else {
@@ -107,49 +111,12 @@ window.addEventListener("scroll", function () {
         timeOut = setTimeout(scrollBottom, 100);
       } else {
         clearTimeout(timeOut);
-        window.scrollTo(0, 4000);
+        window.scrollTo(0, 6000);
       }
     };
   }
+  wrapper.onclick = function drop() {
+    clearTimeout(timeOut);
+    window.scrollTo(0, scrolled);
+  };
 });
-
-// screenArrow.onclick = function scrollTop() {
-//   if (scrolled >= 400) {
-//     scrolled = scrolled - 500;
-//     window.scrollTo(0, scrolled);
-//     timeOut = setTimeout(scrollTop, 100);
-//   } else {
-//     clearTimeout(timeOut);
-//     window.scrollTo(0, 0);
-//   }
-// };
-
-// function scrollTop() {
-//   scrolled = window.pageYOffset;
-//   if (scrolled > 0) {
-//     window.scrollTo(0, scrolled);
-//     scrolled = scrolled - 100;
-//     setTimeout(scrollTop, 200);
-//   }
-// }
-
-// screenArrow.onclick = function () {
-//   if (screenArrow.classList.contains("bottom")) {
-//     startOfPage.scrollIntoView(top);
-//   } else {
-//     // for (let index = window.pageYOffset; index <= 4000; ) {
-//     //   setTimeout(index++, 100);
-//     //   window.scrollTo(0, index);
-//     // }
-//     endOfPage.scrollIntoView(top);
-//   }
-// };
-
-// window.addEventListener("scroll", function () {
-//   let cord = window.pageYOffset;
-//   if (scrolled>= 400) {
-//     screenArrow.classList.add("bottom");
-//   } else {
-//     screenArrow.classList.remove("bottom");
-//   }
-// });
